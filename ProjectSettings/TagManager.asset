@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Whiteboard
+  - Controller
+  - Tester
+  - Pero
+  - Fire
+  - Box
+  - Desna
+  - Syringe
+  - Ampula
+  - detailTag
+  - Detail
+  - Infiltrazionaia_Trigger
+  - Rezsova_Trigger
+  - Tubiralina_Trigger
+  - Nebnaia_Trigger
+  - Mentalinaia_Trigger
+  - Trigger
+  - Infiltrazionaia_Trigger2
+  - Infiltrazionaia_Trigger3
+  - Infiltrazionaia_Trigger4
+  - Infiltrazionaia_Trigger5
+  - Infiltrazionaia_Trigger6
+  - Mentalinaia_Trigger2
+  - Nebnaia_Trigger2
+  - Tubiralina_Trigger2
+  - Mandibuliarnaia_Trigger
+  - Mandibuliarnaia_Trigger2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Grab
+  - LeftHandPhysic
+  - RightHandPhysic
+  - Post-Processing
+  - HandInteractable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
