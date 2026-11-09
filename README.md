@@ -1,55 +1,55 @@
-# Stamo — VR-симулятор стоматологической анестезии
+# Stamo — VR Dental Anesthesia Simulator
 
-**Stamo** — учебное VR-приложение на Unity для отработки техник местной анестезии в стоматологии. Пользователь находится в виртуальном кабинете, берёт карпульный шприц, вводит иглу в заданную точку на модели пациента, вводит анестетик и получает баллы за каждую выполненную инъекцию.
+**Stamo** is a Unity-based VR training application for practicing local anesthesia techniques in dentistry. The user stands in a virtual dental office, picks up a cartridge syringe, inserts the needle at a target point on a patient model, delivers the anesthetic, and earns points for each completed injection.
 
-## Возможности
+## Features
 
-- 15 точек инъекции, сгруппированных по 6 видам анестезии.
-- Шприц, который берётся рукой, со счётчиком оставшегося объёма в миллилитрах.
-- Подсказки на модели: маркеры точек инъекции и панель со списком техник на русском и английском языках.
-- Фиксация шприца под заданным углом при попадании иглы в точку.
-- Система баллов и звуковой сигнал при успешной инъекции.
-- Стерилизация шприца, замена ампулы и утилизация шприца в контейнер.
-- Физические руки, которые сталкиваются с предметами сцены.
-- Анимация открывания рта модели пациента при приближении игрока.
+- 15 injection points grouped into 6 types of anesthesia.
+- A grabbable syringe with a readout of the remaining volume in milliliters.
+- On-model guidance: injection point markers and a panel listing the techniques in Russian and English.
+- The syringe locks at the required angle when the needle reaches a point.
+- Scoring and a sound cue on each successful injection.
+- Syringe sterilization, cartridge replacement, and syringe disposal in a bin.
+- Physics-based hands that collide with objects in the scene.
+- The patient model opens its mouth when the player approaches.
 
-## Техники анестезии
+## Anesthesia techniques
 
-| Анестезия | English | Точек | Баллов за точку |
-|---|---|:---:|:---:|
-| Инфильтрационная | Infiltration anesthesia | 6 | 50–100 |
-| Резцовая | Incisive nerve block | 1 | 100 |
-| Туберальная | Posterior Superior Alveolar Nerve Block | 2 | 100 |
-| Нёбная | Nasopalatine nerve block | 2 | 75 |
-| Ментальная | Mental nerve block | 2 | 75 |
-| Мандибулярная (пальпаторный и аподактильный методы) | Inferior Alveolar Nerve Block | 2 | 200 |
+| Anesthesia | Points | Score per point |
+|---|:---:|:---:|
+| Infiltration anesthesia | 6 | 50–100 |
+| Incisive nerve block | 1 | 100 |
+| Posterior Superior Alveolar Nerve Block (tuberal) | 2 | 100 |
+| Nasopalatine nerve block | 2 | 75 |
+| Mental nerve block | 2 | 75 |
+| Inferior Alveolar Nerve Block (mandibular; palpation and apodactylic methods) | 2 | 200 |
 
-Максимальная сумма за прохождение всех точек — **1450 баллов**.
+The maximum total for completing all points is **1450**.
 
-## Как проходит инъекция
+## How an injection works
 
-1. Создайте шприц и ампулу кнопкой **Add syringe** на панели.
-2. Возьмите шприц и соедините его с ампулой: при столкновении ампула устанавливается в шприц.
-3. Поднесите иглу к маркеру нужной точки. Шприц зафиксируется в правильном положении.
-4. Удерживайте кнопку активации, чтобы ввести анестетик. Точка засчитается, когда будет введено больше 0,4 мл.
-5. Полный объём ампулы — 2,0 мл. Если в шприце осталось 0,4 мл или меньше, появится сообщение **Not enough**, и ампулу нужно заменить.
+1. Press **Add syringe** on the panel to create a syringe and a cartridge.
+2. Pick up the syringe and bring it into contact with the cartridge, which then installs into the syringe.
+3. Move the needle to the marker of the desired point. The syringe locks into the correct position.
+4. Hold the activate button to deliver the anesthetic. The point counts once more than 0.4 ml has been delivered.
+5. A full cartridge holds 2.0 ml. If 0.4 ml or less remains in the syringe, a **Not enough** message appears and the cartridge must be replaced.
 
-## Управление
+## Controls
 
-Приложение использует контроллеры VR-шлема. Подписи на панели в приложении:
+The application uses VR headset controllers.
 
-| Действие | Управление |
+| Action | Control |
 |---|---|
-| Взять предмет | Захват контроллера (XR Grab) |
-| Ввести анестетик | Активация удерживаемого шприца (по умолчанию в XR Interaction Toolkit — курок) |
-| Стерилизовать шприц | Кнопка **B** |
-| Заменить ампулу | Кнопка **A** |
-| Перемещение | Стик контроллера |
-| Выход | Кнопка **Exit** на панели |
+| Pick up an object | Controller grip (XR Grab) |
+| Deliver anesthetic | Activate while holding the syringe (the trigger by default in XR Interaction Toolkit) |
+| Sterilize the syringe | **B** button |
+| Refill the cartridge | **A** button |
+| Move | Controller thumbstick |
+| Exit | **Exit** button on the panel |
 
-## Технологии
+## Tech stack
 
-| Компонент | Версия |
+| Component | Version |
 |---|---|
 | Unity | 2021.3.16f1 (LTS) |
 | Universal Render Pipeline | 12.1.8 |
@@ -60,64 +60,64 @@
 | Post Processing | 3.2.2 |
 | TextMeshPro | 3.0.6 |
 
-Для импорта glTF-моделей в проект включён UniGLTF.
+UniGLTF is included in the project for importing glTF models.
 
-## Требования
+## Requirements
 
-- Unity **2021.3.16f1** с модулем **Android Build Support** (Android SDK, NDK и OpenJDK).
-- VR-шлем Oculus/Meta Quest: в настройках OpenXR для Android включена поддержка Oculus Quest.
-- Android 7.0 или новее (API 24; целевой API — 30), архитектура ARM64, backend IL2CPP.
+- Unity **2021.3.16f1** with the **Android Build Support** module (Android SDK, NDK, and OpenJDK).
+- An Oculus/Meta Quest headset: Oculus Quest support is enabled in the OpenXR settings for Android.
+- Android 7.0 or later (API 24; target API 30), ARM64 architecture, IL2CPP backend.
 
-## Запуск
+## Getting started
 
 ```bash
 git clone https://github.com/MerlanOurBoss/VR_Application_For_Dental_Clinic.git
 ```
 
-1. Откройте папку проекта в Unity Hub с редактором версии 2021.3.16f1. Первый импорт может занять некоторое время.
-2. Откройте сцену `Assets/Scenes/SampleScene.unity` — это единственная сцена в сборке.
+1. Open the project folder in Unity Hub with editor version 2021.3.16f1. The first import may take a while.
+2. Open the scene `Assets/Scenes/SampleScene.unity`, the only scene in the build.
 
-### Сборка для Quest
+### Building for Quest
 
-1. Включите на шлеме режим разработчика и подключите его к компьютеру по USB.
-2. В **File → Build Settings** выберите платформу **Android** и нажмите **Switch Platform**.
-3. В **Project Settings → Player → Publishing Settings** укажите пароль хранилища ключей и псевдонима либо создайте собственный keystore. В проекте настроен `user.keystore` с псевдонимом `merlan`.
-4. Нажмите **Build And Run**.
+1. Enable developer mode on the headset and connect it to your computer via USB.
+2. In **File → Build Settings**, select the **Android** platform and click **Switch Platform**.
+3. In **Project Settings → Player → Publishing Settings**, enter the keystore and alias passwords, or create your own keystore. The project is configured to use `user.keystore` with the alias `merlan`.
+4. Click **Build And Run**.
 
-## Структура проекта
+## Project structure
 
 ```text
 Assets/
-├── Scenes/          # SampleScene и запечённое освещение
-├── Scripts/         # Логика симулятора
-├── Prefabs/         # Шприц, ампула, контроллеры, маркеры точек (Dots)
-├── Model/           # Модели кабинета, пациента и инструментов, анимации
-├── Materials/       # Материалы
-├── Sound/           # Звуковые эффекты
-├── AllSkyFree/      # Скайбоксы
-└── Custom asstest/  # XR-настройки, Oculus Hands Physics, UniGLTF, шрифты
+├── Scenes/          # SampleScene and baked lighting
+├── Scripts/         # Simulator logic
+├── Prefabs/         # Syringe, cartridge, controllers, injection point markers (Dots)
+├── Model/           # Office, patient, and instrument models, animations
+├── Materials/       # Materials
+├── Sound/           # Sound effects
+├── AllSkyFree/      # Skyboxes
+└── Custom asstest/  # XR settings, Oculus Hands Physics, UniGLTF, fonts
 ```
 
-### Основные скрипты
+### Main scripts
 
-| Скрипт | Назначение |
+| Script | Purpose |
 |---|---|
-| `SyringeInput` | Обработка всех точек инъекции: положение шприца, проверка объёма, начисление баллов |
-| `Injection` | Движение поршня и расход анестетика |
-| `SterilizeSyringe`, `SterilizeField` | Стерилизация шприца и восстановление объёма |
-| `AddAmpula` | Установка ампулы в шприц |
-| `CreateSyringe` | Создание нового шприца и ампулы |
-| `Syringe` | Показ маркера выбранной точки инъекции |
-| `ColliderFreeze` | Завершение точки: скрытие маркера и обновление значка на панели |
-| `ScoreImplementiing` | Подсчёт и вывод баллов |
-| `MakeInjection` | Подсветка десны при контакте с иглой |
-| `HeadOpenMouth` | Открывание рта пациента при приближении игрока |
-| `LeftHandMove` | Анимация левой руки при приближении шприца |
-| `HandPhysics` | Следование физических рук за контроллерами |
-| `CharacterControl` | Перемещение игрока и гравитация |
-| `Bin` | Утилизация шприца |
-| `ExitButton` | Выход из приложения |
+| `SyringeInput` | Handles all injection points: syringe position, volume checks, scoring |
+| `Injection` | Plunger movement and anesthetic consumption |
+| `SterilizeSyringe`, `SterilizeField` | Syringe sterilization and volume reset |
+| `AddAmpula` | Installs the cartridge in the syringe |
+| `CreateSyringe` | Creates a new syringe and cartridge |
+| `Syringe` | Shows the marker of the selected injection point |
+| `ColliderFreeze` | Completes a point: hides the marker and updates its panel icon |
+| `ScoreImplementiing` | Tracks and displays the score |
+| `MakeInjection` | Highlights the gum on needle contact |
+| `HeadOpenMouth` | Opens the patient's mouth when the player approaches |
+| `LeftHandMove` | Animates the left hand when the syringe approaches |
+| `HandPhysics` | Makes the physics hands follow the controllers |
+| `CharacterControl` | Player movement and gravity |
+| `Bin` | Syringe disposal |
+| `ExitButton` | Exits the application |
 
-## Автор
+## Author
 
 [MerlanOurBoss](https://github.com/MerlanOurBoss)
